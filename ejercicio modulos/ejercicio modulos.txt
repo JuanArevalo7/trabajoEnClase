@@ -1,0 +1,12 @@
+Modulo: Conductor
+	relación con modulo de viajes ya que debe tener como propiedades:
+	# de viajes realziados
+	descripciones de los viajes realizados
+	---
+	relación con modulo de viajes ya que debe tener como propiedades:
+	que carro manejo en cierto viaje 
+	--
+	+ propiedades:
+	numero de documento
+	teléfono 
+	id a asignar
