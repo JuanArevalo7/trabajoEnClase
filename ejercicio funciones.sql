@@ -41,8 +41,9 @@ enfermedad varchar (15)
 alter table Cliente
 add constraint FClienteMascota
 foreign key (idMascotaFK)
-references Mascota(idMascota);
-
+references Mascota(idMascota) ON DELETE CASCADE;
+ALTER TABLE CLIENTE
+drop constraint FClienteMascota;
 alter table Producto
 add constraint FKProductoCliente
 foreign key (cedulaClienteFK)
@@ -116,4 +117,74 @@ END //
 DELIMITER ;
 call consultarVM(1);
 select @resultado;
-select m.nombreMascota,mv.enfermedad as "enfermedad que trata la vacuna" from mascota m inner join Mascota_Vacuna mv on m.idMascota=mv.idMascotaFK
+select m.nombreMascota,mv.enfermedad as "enfermedad que trata la vacuna" 
+from mascota m inner join Mascota_Vacuna mv on m.idMascota=mv.idMascotaFK;
+/*  VISTAS: cosulta, que genera una tabla virtual. No pueden generar cambios. 
+Se ejectura con un select */
+CREATE view vistaCliente as 
+select * from cliente where cedulaCliente=1141515962;
+select * from vistaCliente;
+CREATE view vistaTelefonos as 
+select * from cliente where
+telefono like "%4%" and "%6%" and "%7%"; 
+/* 46 y 7*/
+select * from vistaTelefonos;
+select * from cliente;
+/* DISPARADORES  O TRIGGERS :( objetos de la bd que ayudan a  tener soportes de informacion 
+BEFORE:
+	INSERT
+    UPDATE  
+    DELETE 
+AFTER:
+	INSERT
+    UPDATE
+    DELETE
+SINTAXIS
+DELIMITER //
+CREATE TRIGGER nombreTrigger
+tipoTriger 
+//
+DELIMITER ;
+*/ 
+CREATE TABLE consolidado(
+	idMascota int primary key,
+    nombreMascota varchar(15) not null,
+    generoMascota varchar(15) not null,
+    razaMascota varchar(15) not null,
+    cantidad int
+);
+DELIMITER //
+CREATE TRIGGER registrarConsolidado
+AFTER INSERT ON mascota
+FOR EACH ROW 
+BEGIN 
+	INSERT INTO CONSOLIDADO values(new.idMascota,NEW.nombreMascota,new.generoMascota,NEW.razaMascota,NEW.cantidad);
+END //
+DELIMITER ;
+select * from consolidado;
+insert into mascota values(10,"juan","m","bulldog",1);
+insert into Mascota
+values(78,"max","M","pomerania",1);
+drop trigger registrarConsolidado;
+CREATE TABLE ELIMINADOS(
+cedulaCliente int primary key,
+nombreCliente varchar(15),
+apellidoCliente varchar(15),
+direccionCliente varchar(15),
+telefono int,
+idMascotaFK int)
+DELIMITER $$
+CREATE TRIGGER registrarEliminacion 
+after delete on cliente 
+FOR EACH ROW
+BEGIN
+	insert into eliminados values(OLD.cedulaCliente,OLD.nombreCliente,
+    OLD.apellidoCliente,OLD.direccionCliente,OLD.telefono,OLD.idMascotaFK);
+END $$
+DELIMITER ;
+drop TRIGGER registrarEliminacion;
+select * from cliente;
+insert into cliente 
+values(25,"juan","arroyo","calle 54 a 78",12,78);
+delete from cliente where cedulaCliente=25;
+select * from eliminados;
