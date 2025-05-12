@@ -1,0 +1,35 @@
+use tallerMongodb
+db.createCollection("usuarios")
+//inserciones
+db.usuarios.insertMany([{nombre:"juan perez",edad:30,correo:"juan.perez@urosario.com"},
+{nombre:"ana lopez",edad:25,correo:"ana.lopez@urosario.com"},
+                        {nombre:"Luis torres",edad:35,correo:"luis.torres@urosario.com"}])
+
+//consultas
+db.usuarios.find()
+db.usuarios.find({nombre:{$eq:"ana lopez"}})
+db.usuarios.find({edad:{$lt:30}})
+//updates
+db.usuarios.updateOne({nombre:{$eq:"juan perez"}},{$set:{edad:31}})
+db.usuarios.updateMany({edad:{$gt:30}},{$set:{activo:"true"}})
+db.usuarios.deleteMany({nombre:{$eq:"Luis torres"}})
+db.usuarios.deleteMany({edad:{$lt:30}})
+
+//PRODUCTOS
+db.createCollection("productos")
+// inserciones
+db.productos.insertMany([{nombre:"camisa oversized",precio:20,categoria:"ropa"},
+{nombre:"lavadora",precio:700,categoria:"hogar"},
+{nombre:"cafetera",precio:30,categoria:"electronica"}])
+db.productos.insertMany([{nombre:"ps5",precio:600,categoria:"electronica"},
+{nombre:"portatil",precio:700,categoria:"electronica"}])
+//consultas
+db.productos.find({precio:{$gt:100}})
+db.productos.find().sort({precio:-1})
+//actualizar
+db.productos.updateMany({},{$set:{"en stock":"true"}})
+db.productos.updateMany({precio:{$gt:500}},{$set:{"en stock":"false"}})
+//eliminar
+db.productos.deleteMany({precio:{$lt:50}})
+//ANALISIS
+

@@ -1,0 +1,30 @@
+[{
+  "_id": 1,
+  "nombre": "Laura Arevalo",
+  "genero": "f",
+  "grado": "2a"
+},
+{
+  "_id": 2,
+  "nombre": "juan arevalo",
+  "genero": "m",
+  "grado": "2c"
+},
+{
+  "_id": 3,
+  "nombre": "william ramirez",
+  "genero": "m",
+  "grado": "2b"
+},
+{
+  "_id": 4,
+  "nombre": "tomas gonzalez",
+  "genero": "m",
+  "grado": "2c"
+},
+{
+  "_id": 5,
+  "nombre": "paola rodriguez",
+  "genero": "f",
+  "grado": "2a"
+}]

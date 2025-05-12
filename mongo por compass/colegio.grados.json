@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "681aa1f1f69cecb769e1af67"
+  },
+  "grado": "2b",
+  "salon": 25
+},
+{
+  "_id": {
+    "$oid": "681aa1f1f69cecb769e1af68"
+  },
+  "grado": "2a",
+  "salon": 2
+},
+{
+  "_id": {
+    "$oid": "681aa1f1f69cecb769e1af69"
+  },
+  "grado": "2c",
+  "salon": 14
+}]

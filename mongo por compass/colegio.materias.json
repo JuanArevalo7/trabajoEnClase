@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "681a9f81f69cecb769e1af53"
+  },
+  "id_m": 1,
+  "nombre materia": "fisica",
+  "horas semanales": 6
+},
+{
+  "_id": {
+    "$oid": "681a9f81f69cecb769e1af54"
+  },
+  "id_m": 2,
+  "nombre materia": "etica",
+  "horas semanales": 2
+},
+{
+  "_id": {
+    "$oid": "681a9f81f69cecb769e1af55"
+  },
+  "id_m": 3,
+  "nombre materia": "biologia",
+  "horas semanales": 4
+},
+{
+  "_id": {
+    "$oid": "681a9f81f69cecb769e1af56"
+  },
+  "id_m": 4,
+  "nombre materia": "ed fisica",
+  "horas semanales": 3
+},
+{
+  "_id": {
+    "$oid": "681a9f81f69cecb769e1af57"
+  },
+  "id_m": 5,
+  "nombre materia": "informatica",
+  "horas semanales": 1
+}]

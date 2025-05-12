@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "681aa163f69cecb769e1af5d"
+  },
+  "id_es": 1,
+  "id_m": 2,
+  "calificacion": "A"
+},
+{
+  "_id": {
+    "$oid": "681aa163f69cecb769e1af5e"
+  },
+  "id_es": 2,
+  "id_m": 1,
+  "calificacion": "E"
+},
+{
+  "_id": {
+    "$oid": "681aa163f69cecb769e1af5f"
+  },
+  "id_es": 3,
+  "id_m": 5,
+  "calificacion": "S"
+},
+{
+  "_id": {
+    "$oid": "681aa163f69cecb769e1af60"
+  },
+  "id_es": 4,
+  "id_m": 4,
+  "calificacion": "R"
+},
+{
+  "_id": {
+    "$oid": "681aa163f69cecb769e1af61"
+  },
+  "id_es": 5,
+  "id_m": 3,
+  "calificacion": "D"
+}]
