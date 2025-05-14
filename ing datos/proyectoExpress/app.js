@@ -1,27 +1,29 @@
-const express=require('express');
-const mongoose=require('mongoose');
-const bodyParser=require('body-parser');
-const cors=require('cors');
-const itemRoutes=require('./routes/productoRoutes')
-
-const app=express();
-const PORT=3000
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const itemRoutes = require('./routes/productoRoutes')
+const app = express();
+const port=3000;
 
 //Middleware
 
-app.use(bodyParser.json())
-app.use(cors())
+app.use(bodyParser.json());
+app.use(cors());
 
-//(CONEXION A MONGO DB USANDO MONGOOSE
-mongoose.conect('mongodb://localhost:27017/miapp',{
+//Conexion Mongo
+
+mongoose.connect('mongodb://localhost:27017/miapp',{
     useNewUrlParser:true,
-    useUnifiedTopologt:true,
+    useUnifiedTopology:true,
 })
-.then(()=>console,log("MongoDb conectado"))
-.catch(err=>cibsike.err(err))
+.then(()=>console.log("MongoDB conectado"))
+.catch(err=>console.err(err))
 
-// rutas
-app.use('api/items',itemRoutes)
-app.listen(PORT,()=>){
-    console.log(`servidor conectado en http://localhost:${3000}`)
-}
+//rutas
+
+app.use('api/items', itemRoutes);
+
+app.listen(port,()=>{
+    console.log(`Servidor corriendo sobre http://localhost:${port}`);
+});
