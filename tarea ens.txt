@@ -1,0 +1,7 @@
+﻿.ENV: son valrbles de entorno, que se usan muchas veces en proyectos de desarrollo
+1. Variables de entorno del sistema
+Las variables de entorno del sistema residen en la raíz superior del sistema y son las mismas para todos los procesos que se ejecutan en un sistema bajo todos los perfiles de usuario del mismo. El administrador de tu sistema operativo/sistema suele establecerlas, y rara vez es necesario que juegues con ellas.
+Uno de los usos más habituales de una variable de entorno del sistema es establecer una variable PATH para un paquete/biblioteca global que utilizarán todos los usuarios del sistema.
+2. Variables de entorno de usuario
+Las variables de entorno de usuario son aquellas que son locales a un perfil de usuario en los sistemas Windows. Estas variables se utilizan para almacenar información específica del usuario, como la ruta de acceso a una instalación local de bibliotecas que no deben ser utilizadas por todos los usuarios, valores específicos de programas instalados sólo para usuarios concretos, etc.
+No necesitas que el administrador del sistema haga cambios en estas variables; puedes hacerlo tú mismo como usuario. Estas variables son útiles a la hora de implementar cambios locales en tu sistema sin afectar a otros usuarios.
