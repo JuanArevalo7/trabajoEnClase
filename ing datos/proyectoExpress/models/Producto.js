@@ -1,5 +1,5 @@
 const { default: mongoose } = require('mongoose')
-const monoose=require('mongoose')
+const mongoose=require('mongoose')
 
 const itemSchema=new mongoose.Schema({
     nombre:{type:String,require:true},
